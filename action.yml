@@ -1,0 +1,24 @@
+name: 'ARXIV Action'
+description: 'GitHub Action for ARXIV papers'
+author: 'fagangjin'
+branding:
+  icon: 'arrow-right-circle'
+  color: 'gray-dark'
+inputs:
+  webhook:
+    description: 'webhook url'
+    required: true
+  secret:
+    description: 'signature key'
+    required: false
+    default: ''
+  count:
+    description: 'number of hot papers the user wants to get'
+    required: false
+    default: 8
+outputs:
+  result:
+    description: 'The result of api'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

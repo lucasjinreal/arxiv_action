@@ -1,0 +1,13 @@
+name: V2ex
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: yanglbme/v2ex-action@master
+        with:
+          webhook: ${{ secrets.WEBHOOK }}
+          secret: ${{ secrets.SECRET }}
+          count: 8
